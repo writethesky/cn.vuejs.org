@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>模板语法 - vue.js</title>
+        <title>模板语法 - Vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -615,12 +615,10 @@
 <p>另一个例子是 <code>v-on</code> 指令，它用于监听 DOM 事件：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">"doSomething"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在这里参数是监听的事件名。我们也会更详细地讨论事件处理。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符（Modifiers）是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指定应该以特殊方式绑定。例如，<code>.prevent</code> 修饰符告诉 <code>v-on</code> 指令对于触发的事件调用 <code>event.preventDefault()</code>：</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符（Modifiers）是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，<code>.prevent</code> 修饰符告诉 <code>v-on</code> 指令对于触发的事件调用 <code>event.preventDefault()</code>：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>之后当我们更深入地了解 <code>v-on</code> 与 <code>v-model</code>时，会看到更多修饰符的使用。</p>
-<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h2><p>Vue.js allows you to define filters that can be used to apply common text formatting. Filters are usable in two places: <strong>mustache interpolations and <code>v-bind</code> expressions</strong>. Filters should be appended to the end of the JavaScript expression, denoted by the “pipe” symbol:</p>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。过滤器应该被添加在 <strong>mustache 插值</strong>的尾部，由“管道符”指示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div></pre></td></tr></table></figure>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：<strong>mustache 插值和 <code>v-bind</code> 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- in mustaches --&gt;</span></div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- in v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p class="tip">Vue 2.x 中，过滤器只能在 mustache 绑定和 <code>v-bind</code> 表达式（从 2.1.0 开始支持）中使用，因为过滤器设计目的就是用于文本转换。为了在其他指令中实现更复杂的数据变换，你应该使用<a href="computed.html">计算属性</a>。</p>
 
